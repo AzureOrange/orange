@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <!-- 引入easyui的css文件 -->
+    <link rel="stylesheet" href="themes/default/easyui.css" type="text/css"></link>
+    <link rel="stylesheet" href="themes/icon.css" type="text/css"></link>
+    <!-- 引入easyui的js文件，先引入jquery，再引入easyui -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+
+    <script type="text/javascript">
+        $("#niubi").slider({
+            onChange: function (newValue) {
+                $("span:first").text(newValue);
+                if (newValue == 180) {
+                    $("#tip").text("你真高呀");
+                } else if (newValue >= 170) {
+                    $("#tip").text("你不错呀");
+                } else if (newValue >= 160) {
+                    $("#tip").text("你可以呀");
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+<!--<div id="pp" class="easyui-pagination" data-options="total:2000,pageSize:10" style="background:#efefef;border:1px solid #ccc;"></div>-->
+身高：<span>150</span><span id="tip" style="color: deeppink"></span>
+<div style="margin:50px">
+    <input
+            id="niubi"
+            class="easyui-slider"
+            value="0"
+            style="width:600px;height:500px"
+            data-options="max:180,min:150,mode:'v',showTip:true,rule:[150,'|',160,'|',170,'|',180]"/>
+</div>
+<div id="p2" class="easyui-panel" title="My Panel"
+     style="width:500px;height:150px;padding:10px;background:#fafafa;"
+     data-options="iconCls:'icon-save',closable:true,
+                collapsible:true,minimizable:true,maximizable:true">
+    <p>panel content.</p>
+    <p>panel content.</p>
+</div>
+</body>
+</html>
