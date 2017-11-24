@@ -58,6 +58,7 @@ public class ClassTest {
          */
         User user = new User();
         user.setId(111);
+        System.out.println(user.toString()); // User{id=111, name='null', age=0}
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
         String date = objectMapper.writeValueAsString(user);
