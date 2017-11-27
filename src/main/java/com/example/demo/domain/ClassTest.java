@@ -5,8 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.*;
 import org.apache.commons.lang3.Validate;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author orange
@@ -29,6 +28,17 @@ public class ClassTest {
         users.add(new User(1, "a", 11));
         users.add(new User(2, "b", 22));
         users.add(new User(3, "c", 33));
+        users.add(new User(2, "b", 232));
+
+
+        Iterator<User> targetIterator = users.iterator();
+        while (targetIterator.hasNext()) {
+            User user = targetIterator.next();
+            if (user.getId() == 2){
+                targetIterator.remove();
+            }
+        }
+        System.out.println("users----》" + users.toString());
         classTest.setId(1);
         classTest.setUsers(users);
         for (User user : classTest.getUsers()) {
@@ -63,6 +73,22 @@ public class ClassTest {
         objectMapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
         String date = objectMapper.writeValueAsString(user);
         System.out.println(date);  //{"id":111}
+
+        Set<User> userSet = new HashSet<>();
+        userSet.add(new User(1, "a", 11));
+        userSet.add(new User(2, "b", 22));
+        userSet.add(new User(3, "c", 33));
+        userSet.add(new User(2, "b", 232));
+
+
+        userSet.removeIf(user1 -> {
+            if (user1.getId() == 2){
+                return true;
+            }
+            return false;
+        });
+
+        System.out.println("remove If "+ userSet.toString());
 
     }
 }

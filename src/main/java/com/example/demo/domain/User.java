@@ -32,6 +32,7 @@ public class User {
         User user = (User) o;
 
         if (id != user.id) return false;
+        if (age != user.age) return false;
         return name.equals(user.name);
     }
 
