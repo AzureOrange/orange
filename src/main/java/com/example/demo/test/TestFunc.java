@@ -1,6 +1,6 @@
 package com.example.demo.test;
 
-import com.example.demo.domain.User;
+import com.example.demo.domain.entity.User;
 
 import java.math.BigDecimal;
 

@@ -1,10 +1,13 @@
-package com.example.demo.domain;
+package com.example.demo.domain.defaultvaluenoback;
 
+import com.example.demo.domain.entity.User;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.collect.Lists;
 import lombok.*;
 import org.apache.commons.lang3.Validate;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 /**
@@ -90,7 +93,36 @@ public class ClassTest {
 
         System.out.println("remove If "+ userSet.toString());
 
+        Map<Integer,String> stringMap = new HashMap<>();
+        stringMap.put(1,"qq");
+        stringMap.put(22,"ww");
+
+        for (int i : stringMap.keySet()){
+            Thread.sleep(1);
+            System.out.println("结果：--->" + stringMap.get(i) + "\n" + i);
+        }
+
+        BigDecimal bigDecimal = BigDecimal.valueOf(46.95);
+        System.out.println(bigDecimal.setScale(2, BigDecimal.ROUND_HALF_UP).floatValue());
+
+        long count = 3333;
+        int result = 0;
+        int page = (int) (count/100);
+        for (int i=0; i <= page; i++){
+            result += 100;
+            System.out.println("size--->" + i*100 + "\n" );
+        }
+        System.out.println(result);
+
+        List<User> userList = Lists.newArrayList();
+        List<User> users2 = Lists.newArrayList();
+
+        users2.add(new User(1, "a", 11));
+        userList.addAll(users2);
+
+        System.out.println(userList.toString());
     }
+
 }
 
 

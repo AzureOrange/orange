@@ -1,6 +1,6 @@
 package com.example.demo.test;
 
-import com.example.demo.domain.EnumDemo;
+import com.example.demo.domain.enums.EnumDemo;
 
 import java.util.*;
 import java.util.stream.Collectors;

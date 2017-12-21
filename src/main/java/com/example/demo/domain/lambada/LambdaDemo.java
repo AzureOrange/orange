@@ -1,6 +1,7 @@
-package com.example.demo.domain;
+package com.example.demo.domain.lambada;
 
 import com.alibaba.fastjson.JSONObject;
+import com.example.demo.domain.Equal;
 
 import java.util.*;
 import java.util.stream.Collectors;

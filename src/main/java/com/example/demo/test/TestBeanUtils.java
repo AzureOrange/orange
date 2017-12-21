@@ -1,8 +1,8 @@
 package com.example.demo.test;
 
-import com.example.demo.domain.ReqDto;
-import com.example.demo.domain.ResDto;
-import com.example.demo.domain.User;
+import com.example.demo.domain.lambada.ReqDto;
+import com.example.demo.domain.lambada.ResDto;
+import com.example.demo.domain.entity.User;
 import org.springframework.beans.BeanUtils;
 
 import java.util.*;

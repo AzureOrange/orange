@@ -1,5 +1,6 @@
-package com.example.demo.domain;
+package com.example.demo.domain.lambada;
 
+import com.example.demo.domain.entity.User;
 import lombok.Data;
 
 import java.util.List;
@@ -10,9 +11,8 @@ import java.util.List;
  * @Time 2017/8/24 0024
  */
 @Data
-public class ResDto {
-
-    private List<Integer> users;
+public class ReqDto {
+    private List<User> users;
 
     private long id;
 }
