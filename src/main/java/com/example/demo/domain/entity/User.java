@@ -1,5 +1,7 @@
 package com.example.demo.domain.entity;
 
+import org.apache.commons.lang3.Validate;
+
 import java.util.Objects;
 
 /**
@@ -55,6 +57,7 @@ public class User {
     }
 
     public void setId(int id) {
+        Validate.isTrue(id >= 0, "ID无效");
         this.id = id;
     }
 
