@@ -3,6 +3,7 @@ package com.example.demo.domain.collections;
 import com.google.common.collect.Maps;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * descript
@@ -18,11 +19,12 @@ public class MapTest {
 
         personHashMap.put(1, new Person(1, "A"));
         personHashMap.put(1, new Person(2, "B"));
+        personHashMap.put(5, new Person(3, "C"));
         personHashMap.put(2, new Person(3, "C"));
 
         // TreeMap
-        TreeMap<String,Person> personTreeMap = new TreeMap<>();
-        personTreeMap.put("1",new Person(1, "A"));
+        TreeMap<String, Person> personTreeMap = new TreeMap<>();
+        personTreeMap.put("1", new Person(1, "A"));
         personTreeMap.put("1", new Person(2, "B"));
         personTreeMap.put("5", new Person(3, "C"));
         personTreeMap.put("2", new Person(3, "C"));
@@ -31,7 +33,19 @@ public class MapTest {
             System.out.println("TreeMap---> 键：" + entry.getKey() + "值：" + entry.getValue());
         }
 
-    // ******************* 循环的几种方式   **************
+        // map -- > list
+        List<Person> result = personHashMap.entrySet().stream()
+                .map(x -> x.getValue())
+                .collect(Collectors.toList());
+
+        // sort 排序
+        Map<Integer, Person> results = new LinkedHashMap<>();
+        personHashMap.entrySet().stream()
+                .sorted(Map.Entry.comparingByKey())
+                .forEachOrdered(x -> results.put(x.getKey(), x.getValue()));
+
+
+        // ******************* 循环的几种方式   **************
         // 法一 推荐
         Set<Map.Entry<Integer, Person>> entryEntry = personHashMap.entrySet();
         for (Map.Entry<Integer, Person> entry : entryEntry) {
@@ -62,7 +76,6 @@ public class MapTest {
         for (Integer key : personHashMap.keySet()) {
             System.out.println("键：" + key + "值：" + personHashMap.get(key));
         }
-
 
     }
 }
