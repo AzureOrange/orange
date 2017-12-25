@@ -2,10 +2,7 @@ package com.example.demo.domain.collections;
 
 import com.google.common.collect.Maps;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * descript
@@ -16,16 +13,28 @@ import java.util.Set;
 public class MapTest {
 
     public static void main(String[] args) {
+        // HashMap
         HashMap<Integer, Person> personHashMap = Maps.newHashMap();
 
         personHashMap.put(1, new Person(1, "A"));
         personHashMap.put(1, new Person(2, "B"));
         personHashMap.put(2, new Person(3, "C"));
 
-// ******************* 循环的几种方式   **************
+        // TreeMap
+        TreeMap<String,Person> personTreeMap = new TreeMap<>();
+        personTreeMap.put("1",new Person(1, "A"));
+        personTreeMap.put("1", new Person(2, "B"));
+        personTreeMap.put("5", new Person(3, "C"));
+        personTreeMap.put("2", new Person(3, "C"));
+        Set<Map.Entry<String, Person>> entrys = personTreeMap.entrySet();
+        for (Map.Entry<String, Person> entry : entrys) {
+            System.out.println("TreeMap---> 键：" + entry.getKey() + "值：" + entry.getValue());
+        }
+
+    // ******************* 循环的几种方式   **************
         // 法一 推荐
-        Set<Map.Entry<Integer, Person>> entrys = personHashMap.entrySet();
-        for (Map.Entry<Integer, Person> entry : entrys) {
+        Set<Map.Entry<Integer, Person>> entryEntry = personHashMap.entrySet();
+        for (Map.Entry<Integer, Person> entry : entryEntry) {
             System.out.println("键：" + entry.getKey() + "值：" + entry.getValue());
         }
 
