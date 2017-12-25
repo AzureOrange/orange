@@ -28,14 +28,19 @@ public class User {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof User)) {
+            return false;
+        }
 
         User user = (User) o;
 
-        if (id != user.id) return false;
-        if (age != user.age) return false;
-        return name.equals(user.name);
+        if (id != user.id) {
+            return false;
+        }
+        return age == user.age && name.equals(user.name);
     }
 
     @Override

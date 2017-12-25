@@ -1,6 +1,7 @@
 package com.example.demo.test;
 
 import org.apache.commons.lang3.Validate;
+import org.apache.commons.lang3.math.NumberUtils;
 
 /**
  * @author orange
@@ -13,7 +14,8 @@ public class TestLombok {
         String topicIds = "sss";
         long userId = 0;
         Validate.notBlank(topicIds,"题目ID列表输入有误");
-        Validate.isTrue(userId > 0, "用户ID有误");
+        Validate.isTrue(userId >= 0, "用户ID有误");
 
+        System.out.println(NumberUtils.compare(1,3));
     }
 }
