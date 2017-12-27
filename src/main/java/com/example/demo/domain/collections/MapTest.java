@@ -16,7 +16,6 @@ public class MapTest {
     public static void main(String[] args) {
         // HashMap
         HashMap<Integer, Person> personHashMap = Maps.newHashMap();
-
         personHashMap.put(1, new Person(1, "A"));
         personHashMap.put(1, new Person(2, "B"));
         personHashMap.put(5, new Person(3, "C"));
@@ -28,6 +27,9 @@ public class MapTest {
         personTreeMap.put("1", new Person(2, "B"));
         personTreeMap.put("5", new Person(3, "C"));
         personTreeMap.put("2", new Person(3, "C"));
+
+        System.out.println("测试获取不存在的键值对---->" + personHashMap.get(1));
+
         Set<Map.Entry<String, Person>> entrys = personTreeMap.entrySet();
         for (Map.Entry<String, Person> entry : entrys) {
             System.out.println("TreeMap---> 键：" + entry.getKey() + "值：" + entry.getValue());
