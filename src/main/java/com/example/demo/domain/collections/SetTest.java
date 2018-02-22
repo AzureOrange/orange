@@ -1,9 +1,12 @@
 package com.example.demo.domain.collections;
 
+import com.example.demo.domain.entity.User;
 import com.google.common.collect.Sets;
 
 import java.util.HashSet;
+import java.util.Set;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 /**
  * descript
@@ -38,6 +41,15 @@ public class SetTest {
             System.out.println(person.toString());
         });
 
+        Set<String> topicSet = Sets.newHashSet();
+        topicSet.add("22");
+        topicSet.add("33");
+        topicSet.add("11");
+
+        final String questionIdList = topicSet.stream().map(String::intern).collect(Collectors.joining(","));
+        System.out.println(questionIdList);
+
+        System.out.println(isClaszz(User.class));
         /*
          treeSet要注意的事项：
      1. 往TreeSet添加元素的时候，如果元素本身具备了自然顺序的特性，那么就按照元素自然顺序的特性进行排序存储。
@@ -50,5 +62,9 @@ public class SetTest {
      5.  往TreeSet添加元素的时候，如果元素本身不具备自然顺序的特性，而元素所属的类已经实现了Comparable接口， 在创建TreeSet对象的时候也传入了比较器
      那么是以比较器的比较规则优先使用。
          */
+    }
+
+    public static boolean isClaszz(Class clazz){
+        return clazz.equals(User.class);
     }
 }

@@ -18,6 +18,8 @@ public class Peach {
 
     private int id;
 
+    private int age;
+
     private String name;
 
     @Singular(value = "users")
