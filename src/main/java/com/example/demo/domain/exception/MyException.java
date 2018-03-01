@@ -1,7 +1,7 @@
 package com.example.demo.domain.exception;
 
 /**
- * descript
+ * 自定义异常类
  *
  * @author orange
  * @Time 2018/2/22 0022

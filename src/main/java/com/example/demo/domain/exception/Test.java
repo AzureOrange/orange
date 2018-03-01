@@ -26,7 +26,7 @@ public class Test {
         try {
             float i = 1 / 0;
         } catch (Exception e) {
-            throw new MyException("被除数不能为0");
+            throw new MyException("被除数不能为0 ---" + e.getMessage());
         }
     }
 

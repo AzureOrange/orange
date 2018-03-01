@@ -2,8 +2,10 @@ package com.example.demo.domain.collections;
 
 
 import com.google.common.collect.Lists;
+import org.springframework.beans.BeanUtils;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * descript
@@ -23,6 +25,14 @@ public class ListTest {
 
         System.out.println("最后一条数据" + personList.get(personList.size()-1));
 
+        // 一个List -->  另一个List    demo忽略了另一个List
+        List<Person> personDTOList = personList.stream()
+                .map(person -> {
+                    Person personDTO = new Person();
+                    BeanUtils.copyProperties(person, personDTO);
+                    return personDTO;
+                })
+                .collect(Collectors.toList());
 
         // LinkedList
         LinkedList<Person> personLink = Lists.newLinkedList();
