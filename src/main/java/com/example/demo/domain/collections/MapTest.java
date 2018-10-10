@@ -55,6 +55,7 @@ public class MapTest {
         }
 
         // 法二
+        personHashMap = null;
         personHashMap.forEach((integer, person) -> {
             System.out.println("法五：键：" + integer + "值：" + person);
         });

@@ -1,5 +1,9 @@
 package com.example.demo.domain.kotlin;
 
+import com.google.common.collect.Lists;
+
+import java.util.List;
+
 /**
  * descript
  *
@@ -18,5 +22,11 @@ public class JavaTest {
         System.out.println("\n" + count);
 
         kotlinTest.vars(1,2,3) ;
+
+        String groupId = "q,w,c";
+        List<String> groupList = Lists.newArrayList(groupId.split(","));
+        System.out.println(groupList);
+
     }
+
 }

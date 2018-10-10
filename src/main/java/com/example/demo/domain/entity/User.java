@@ -11,6 +11,14 @@ import java.util.Objects;
  */
 public class User {
 
+    static {
+        System.out.println("静态代码块");
+    }
+
+    {
+        System.out.println("非静态代码块");
+    }
+
     private int id;
 
     private String name;

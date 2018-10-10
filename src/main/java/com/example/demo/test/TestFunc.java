@@ -18,17 +18,15 @@ public class TestFunc {
         name = "帅气";
         System.out.println (user);
 
-       /* float f = 10;
-        System.out.println (numberRetainTwoPoint (f));
+        String string = "";
+        String[] schools = string.split(",");
+        System.out.println(schools.toString());
 
-        User user2 =new User(1, "shuaiqiqqqq", 11);
-        User user3 =new User(2, "shuaiqiqqqq", 11);
-        Map<Integer,User> userMap =new HashMap<> ();
-        userMap.put (user.getId (),user);
-        userMap.put (user2.getId (),user2);
-        userMap.put (user3.getId (),user3);
-        User user1 =userMap.get (6);
-        System.out.println (user1);*/
+        String a = "a";
+        String b = null;
+        if ("b".equals(a) && b.equals("c")){
+            System.out.println("结果");
+        }
     }
 
     public static void updateUser(User user) {

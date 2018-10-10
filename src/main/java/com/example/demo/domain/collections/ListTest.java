@@ -22,6 +22,12 @@ public class ListTest {
         personList.add(new Person(1,"A"));
         personList.add(new Person(2,"B"));
         personList.add(new Person(3,"B"));
+        for (Person p : personList){
+            int i = 10;
+            p.setId(i);
+            i++;
+        }
+        System.out.println(personList);
 
         System.out.println("最后一条数据" + personList.get(personList.size()-1));
 

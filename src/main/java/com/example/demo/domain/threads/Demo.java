@@ -11,8 +11,9 @@ public class Demo {
     public static void main(String[] args) {
         TalkThread talkThread = new TalkThread();
         talkThread.start();
+        new TalkThread().start();
 
-        VideoThread videoThread = new VideoThread();
-        videoThread.start();
+//        VideoThread videoThread = new VideoThread();
+//        videoThread.start();
     }
 }

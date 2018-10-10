@@ -10,6 +10,8 @@ public class VideoThread extends Thread {
 
     @Override
     public void run() {
-        System.out.println("VideoThread----111");
+        for (int i = 50; i < 100; i++){
+            System.out.println("当前线程为：" + getName() + "--->" + i);
+        }
     }
 }

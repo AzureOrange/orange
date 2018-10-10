@@ -51,4 +51,21 @@ public class Person implements Comparable<Person>{
     public int compareTo(Person o) {
         return this.id - o.id;
     }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

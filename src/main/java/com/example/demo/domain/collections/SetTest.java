@@ -2,8 +2,8 @@ package com.example.demo.domain.collections;
 
 import com.example.demo.domain.entity.User;
 import com.google.common.collect.Sets;
+import org.apache.commons.collections.CollectionUtils;
 
-import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
@@ -19,9 +19,10 @@ public class SetTest {
     public static void main(String[] args) {
 
         //  HashSet
-        HashSet<Person> personHashSet = Sets.newHashSet();
+        Set<Person> personHashSet = Sets.newHashSet();
         personHashSet.add(new Person(1,"A"));
-        personHashSet.add(new Person(1,"A"));
+        personHashSet.add(new Person(3,"A"));
+        personHashSet.remove(new Person(1,"D"));
         personHashSet.add(new Person(1,"C"));
         personHashSet.add(new Person(2,"B"));
         personHashSet.add(new Person(3,"B"));
@@ -29,6 +30,8 @@ public class SetTest {
         personHashSet.forEach(person -> {
             System.out.println(person.toString());
         });
+
+        System.out.println("分隔线-------");
 
         // TreeSet
         TreeSet<Person> personTreeSet = Sets.newTreeSet();
@@ -40,6 +43,12 @@ public class SetTest {
         personTreeSet.forEach(person -> {
             System.out.println(person.toString());
         });
+        TreeSet<Float> score = Sets.newTreeSet();
+        score.add(1.3F);
+        score.add(4.8F);
+        score.add(2.9F);
+
+        System.out.println(CollectionUtils.cardinality(1.3F, score));
 
         Set<String> topicSet = Sets.newHashSet();
         topicSet.add("22");
@@ -49,7 +58,7 @@ public class SetTest {
         final String questionIdList = topicSet.stream().map(String::intern).collect(Collectors.joining(","));
         System.out.println(questionIdList);
 
-        System.out.println(isClaszz(User.class));
+        System.out.println(isClazz(User.class));
         /*
          treeSet要注意的事项：
      1. 往TreeSet添加元素的时候，如果元素本身具备了自然顺序的特性，那么就按照元素自然顺序的特性进行排序存储。
@@ -64,7 +73,7 @@ public class SetTest {
          */
     }
 
-    public static boolean isClaszz(Class clazz){
+    private static boolean isClazz(Class clazz){
         return clazz.equals(User.class);
     }
 }
